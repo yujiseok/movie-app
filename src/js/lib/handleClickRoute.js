@@ -12,4 +12,16 @@ const movieDetailRoute = () => {
   });
 };
 
-export { movieDetailRoute };
+const movieLikeDetailRoute = () => {
+  const pageChange = document.querySelector(".likes-wrap");
+
+  pageChange.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (e.target.parentNode.matches("[route]")) {
+      const pagePath = e.target.parentNode.getAttribute("route");
+      navigate(pagePath);
+    }
+  });
+};
+
+export { movieDetailRoute, movieLikeDetailRoute };

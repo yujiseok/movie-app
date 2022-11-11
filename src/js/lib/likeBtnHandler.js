@@ -1,3 +1,7 @@
+export const saveMovies = (movies) => {
+  localStorage.setItem("movies", JSON.stringify(movies));
+};
+
 export const likeBtnHandler = () => {
   let movies = JSON.parse(localStorage.getItem("movies")) || [];
   const likesBtns = document.querySelectorAll(".like-btn");
@@ -9,16 +13,12 @@ export const likeBtnHandler = () => {
   const typeArr = [...movieTypes];
   const movieArr = [...movieYears];
 
-  function saveMoives() {
-    localStorage.setItem("movies", JSON.stringify(movies));
-  }
-
   for (let i = 0; i < btnArr.length; i++) {
     btnArr[i].addEventListener("click", () => {
       if (btnArr[i].classList.contains("fa-solid")) {
         btnArr[i].classList.remove("fa-solid");
         movies = movies.filter((movie) => movie.imdbID !== btnArr[i].id);
-        saveMoives();
+        saveMovies(movies);
       } else {
         btnArr[i].classList.add("fa-solid");
 
@@ -32,7 +32,7 @@ export const likeBtnHandler = () => {
         };
 
         movies.push(likeMovie);
-        saveMoives();
+        saveMovies(movies);
       }
     });
 
@@ -46,4 +46,35 @@ export const likeBtnHandler = () => {
       });
     });
   }
+};
+
+export const detailLikeBtnHandler = () => {
+  const poster = document.querySelector(".poster");
+  const year = document.querySelector(".year");
+  const type = document.querySelector(".type");
+  const likeBtn = document.querySelector(".like-btn");
+
+  let movies = JSON.parse(localStorage.getItem("movies")) || [];
+
+  likeBtn.addEventListener("click", () => {
+    if (likeBtn.classList.contains("fa-solid")) {
+      likeBtn.classList.remove("fa-solid");
+      movies = movies.filter((movie) => movie.imdbID !== likeBtn.id);
+      saveMovies(movies);
+    } else {
+      likeBtn.classList.add("fa-solid");
+
+      const likeMovie = {
+        imdbID: likeBtn.id,
+        Title: poster.getAttribute("alt"),
+        Poster: poster.getAttribute("src"),
+        Type: type.textContent,
+        Year: year.textContent,
+        Time: Date.now(),
+      };
+
+      movies.push(likeMovie);
+      saveMovies(movies);
+    }
+  });
 };

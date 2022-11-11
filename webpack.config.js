@@ -34,6 +34,7 @@ module.exports = () => {
         filename: "./index.html",
         chunks: ["index"],
         minify: true,
+        favicon: "./src/favicon.ico",
       }),
       new MiniCssExtractPlugin({ filename: "./css/style.css" }),
       new DefinePlugin({

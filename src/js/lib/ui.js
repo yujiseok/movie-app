@@ -1,3 +1,5 @@
+import { placeholderArr } from "../../data/placeholder";
+
 const loaderHandler = (state) => {
   const loaderEl = document.getElementById("loader");
   state
@@ -28,15 +30,6 @@ const typeWriter = (text) => {
 };
 
 const randomPlaceHolder = () => {
-  const placeholderArr = [
-    "Notting Hill",
-    "Titanic",
-    "Eternal Sunshine",
-    "La La Land",
-    "Before Sunrise",
-    "Matrix",
-  ];
-
   const randomArr = placeholderArr.sort(() => Math.random() - 0.5);
 
   const searchEl = document.getElementById("search");

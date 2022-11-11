@@ -2,6 +2,11 @@ export const placeholderArr = [
   "Notting Hill",
   "Titanic",
   "Eternal Sunshine",
-  "LaLa Land",
+  "La La Land",
   "Before Sunrise",
+  "Iron Man",
+  "Spider Man",
+  "Mad Max",
+  "Pulp Fiction",
+  "Love Letter",
 ];

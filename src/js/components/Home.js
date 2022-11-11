@@ -6,9 +6,9 @@ const home = (likedMovies) => {
  <section class="home-section">
     <div class="max-w-1280 mx-auto py-24 ">
       <div>
-        <h1>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, dolorum.
-        </h1>
+        <h2 class="text-xl font-semibold">
+          영화를 검색해보세요
+        </h2>
       </div>
   
       <form id="form" class="flex items-center gap-2 mt-6">
