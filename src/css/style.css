@@ -1,0 +1,84 @@
+body {
+  background-color: #f8f9fa;
+  transition: background-color 0.3s;
+}
+
+body.dark {
+  background-color: #292c35;
+  color: #fff;
+}
+
+.dark-mode-btn {
+  opacity: 0;
+  position: absolute;
+}
+
+.dark-mode-btn:checked + .dark-mode-label .ball {
+  transform: translateX(24px);
+}
+
+.dark-mode-btn:checked + .dark-mode-label {
+  /* background-color: #adb5bd; */
+  background-color: rgb(55 65 81);
+}
+
+.dark-mode-label {
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 26px;
+  width: 50px;
+  border-radius: 50px;
+  padding: 5px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  transform: scale(1.2);
+}
+
+.ball {
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.fa-moon {
+  color: #ffd43b;
+  margin-top: 0.5px;
+}
+
+.fa-sun {
+  color: #f39c12;
+  margin-top: 0.5px;
+}
+
+.plot-wrap {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 5;
+}
+
+.title-wrap {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+}
+
+#loader {
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  backdrop-filter: blur(1px);
+}
