@@ -42,45 +42,51 @@ const like = () => {
   } else {
     parse.forEach((p) => {
       document.querySelector(".likes-wrap").innerHTML += `
-      <li
-        class="bg-white rounded-md border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
-      >
-        <img
-          class="rounded-t-md w-full h-80 movie-poster"
-          src="${p.Poster ? p.Poster : nothing}"
-          alt="${p.Title}"
-        />
-
-        <div
-          class="p-4"
-          style="height: 150px; display: flex; justify-content: space-between; flex-direction: column;"
+        <li
+          class="bg-white rounded-md border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
         >
-          <h5
-            class="title-wrap text-lg font-bold text-gray-900 dark:text-white"
+          <a
+            href="/"
+            id="detail-link"
+            data-id="${p.imdbID}"
             route="/detail/${p.imdbID}"
           >
-            <a
-              href="/"
-              id="detail-link"
-              data-id="${p.imdbID}"
+            <img
+              class="rounded-t-md w-full h-80 movie-poster"
+              src="${p.Poster !== "N/A" ? p.Poster : nothing}"
+              alt="${p.Title}"
+            />
+          </a>
+          <div
+            class="p-4"
+            style="height: 150px; display: flex; justify-content: space-between; flex-direction: column;"
+          >
+            <h5
+              class="title-wrap text-lg font-bold text-gray-900 dark:text-white"
               route="/detail/${p.imdbID}"
             >
-              ${p.Title}</a
-            >
-          </h5>
+              <a
+                href="/"
+                id="detail-link"
+                data-id="${p.imdbID}"
+                route="/detail/${p.imdbID}"
+              >
+                ${p.Title}</a
+              >
+            </h5>
 
-          <div class="flex justify-between">
-            <div>
-              <div class="movie-type text-sm">${p.Type}</div>
-              <div class="movie-year text-sm">${p.Year}</div>
+            <div class="flex justify-between">
+              <div>
+                <div class="movie-type text-sm">${p.Type}</div>
+                <div class="movie-year text-sm">${p.Year}</div>
+              </div>
+              <button>
+                <i id="${p.imdbID}" class="like-btn fa-regular fa-heart"></i>
+              </button>
             </div>
-            <button>
-              <i id="${p.imdbID}" class="like-btn fa-regular fa-heart"></i>
-            </button>
           </div>
-        </div>
-      </li>
-    `;
+        </li>
+      `;
 
       likeBtnHandler();
     });

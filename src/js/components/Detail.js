@@ -65,7 +65,7 @@ const detail = async (id) => {
   }"></i>
             </button>
             </div>
-            <div class="shadow-lg p-4 rounded-md">
+            <div class="shadow-lg p-4 rounded-md h-full">
               <h4 class="mb-4 text-lg font-semibold">Movie Details</h4>
               <p class="plot-wrap mb-4">${res.Plot}</p>
              <div class="text-sm text-gray-500 flex flex-col gap-2">

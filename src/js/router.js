@@ -7,6 +7,7 @@ import main from "./components/Main";
 import profile from "./components/Profile";
 import { cancelLikeBtnHandler } from "./lib/cancelLikeBtnHandler";
 import { movieDetailRoute, movieLikeDetailRoute } from "./lib/handleClickRoute";
+
 const navigate = (pagePath) => {
   history.pushState(null, null, location.origin + pagePath);
   router();
