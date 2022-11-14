@@ -47,6 +47,18 @@ const getYear = () => {
   );
 };
 
+const getPage = () => {
+  const pagesEl = document.getElementById("pages");
+  const pages = [];
+  for (let i = 1; i <= 5; i += 1) {
+    pages.push(i);
+  }
+
+  pages.forEach(
+    (page) => (pagesEl.innerHTML += `<option value="${page}">${page}</option>`)
+  );
+};
+
 const getCopyYear = () => {
   const getFullYear = new Date().getFullYear();
   copyYearEl = document.querySelector(".copy-year");
@@ -87,6 +99,7 @@ export {
   // typeWriter,
   randomPlaceHolder,
   getYear,
+  getPage,
   getCopyYear,
   darkModeHandler,
 };

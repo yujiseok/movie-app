@@ -1,5 +1,5 @@
 import { searchHandler } from "../lib/fetch";
-import { getYear, randomPlaceHolder } from "../lib/ui";
+import { getPage, getYear, randomPlaceHolder } from "../lib/ui";
 const home = () => {
   const sectionMarkup = `
     <section class="home-section">
@@ -27,6 +27,14 @@ const home = () => {
             class="border px-2 py-1 text-sm rounded-md dark:text-gray-400"
           >
             <option value="">개봉연도</option>
+          </select>
+          <select
+            name=""
+            id="pages"
+            class="border px-2 py-1 text-sm rounded-md dark:text-gray-400"
+          >
+            <option value="">페이지</option>
+     
           </select>
           <button
             type="button"
@@ -72,6 +80,7 @@ const home = () => {
 
   randomPlaceHolder();
   getYear();
+  getPage();
 
   const searchBtn = document.getElementById("search-btn");
   const formEl = document.getElementById("form");

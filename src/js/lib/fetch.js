@@ -102,8 +102,11 @@ const searchHandler = (e) => {
   const title = document.getElementById("search").value;
   const types = document.getElementById("types").value;
   const years = document.getElementById("years").value;
+  const pages = document.getElementById("pages").value;
 
-  title ? fetchMovies(title, types, years) : alert("검색어를 입력하세요");
+  title
+    ? fetchMovies(title, types, years, pages)
+    : alert("검색어를 입력하세요");
 };
 
 export { fetchMovieDetail, renderMovieLists, fetchMovies, searchHandler };
