@@ -1,4 +1,4 @@
-import { placeholderArr } from "../../data/placeholder";
+import { placeholderArr } from "../../data/store";
 
 const loaderHandler = (state) => {
   const loaderEl = document.getElementById("loader");
@@ -7,27 +7,22 @@ const loaderHandler = (state) => {
     : loaderEl.classList.add("hidden");
 };
 
-// ui
-// document.addEventListener("DOMContentLoaded", () => {
-//   document.querySelector(".like").classList.add("text-amber-500");
-// });
+// const typeWriter = (text) => {
+//   // const text = text;
+//   const speed = 100;
+//   let index = 0;
 
-const typeWriter = (text) => {
-  // const text = text;
-  const speed = 100;
-  let index = 0;
+//   function typewriter() {
+//     document.getElementById("typewriter").textContent = text.slice(0, index);
+//     index++;
 
-  function typewriter() {
-    document.getElementById("typewriter").textContent = text.slice(0, index);
-    index++;
+//     if (index > text.length) {
+//       index = 1;
+//     }
+//   }
 
-    if (index > text.length) {
-      index = 1;
-    }
-  }
-
-  setInterval(typewriter, speed);
-};
+//   setInterval(typewriter, speed);
+// };
 
 const randomPlaceHolder = () => {
   const randomArr = placeholderArr.sort(() => Math.random() - 0.5);
@@ -89,7 +84,7 @@ const darkModeHandler = () => {
 
 export {
   loaderHandler,
-  typeWriter,
+  // typeWriter,
   randomPlaceHolder,
   getYear,
   getCopyYear,

@@ -1,48 +1,46 @@
-import { fetchMovies, searchHandler } from "../lib/fetch";
+import { searchHandler } from "../lib/fetch";
 import { getYear, randomPlaceHolder } from "../lib/ui";
-// sm:px-8 md:px-6 lg:px-4 xl:px-2
-const home = (likedMovies) => {
+const home = () => {
   const sectionMarkup = `
- <section class="home-section">
-    <div class="max-w-1280 mx-auto py-24 ">
-      <div>
-        <h2 class="text-xl font-semibold">
-          영화를 검색해보세요
-        </h2>
-      </div>
-  
-      <form id="form" class="flex items-center gap-2 mt-6">
-        <input
-          id="search"
-          type="text"
-          class="border px-2 py-1 h-8 flex-1 rounded-md dark:text-gray-400"
-        />
-        <select
-          name=""
-          id="types"
-          class="border px-2 py-1 text-sm rounded-md dark:text-gray-400"
-        >
-          <option value="movie">영화</option>
-          <option value="series">시리즈</option>
-        </select>
-        <select
-          name=""
-          id="years"
-          class="border px-2 py-1 text-sm rounded-md dark:text-gray-400"
-        >
-          <option value="">개봉연도</option>
-        </select>
-        <button
-          type="button"
-          id="search-btn"
-          class="border px-2 py-1 text-sm rounded-md bg-white dark:text-gray-400"
-        >
-          검색
-        </button>
-      </form>
-  
-      <div class="mt-4">
-        <div class="max-w-1280 mx-auto relative">
+    <section class="home-section">
+      <div class="max-w-1280 mx-auto pt-24 ">
+        <div>
+          <h2 class="text-xl font-semibold">영화를 검색해보세요</h2>
+        </div>
+        <form id="form" class="flex items-center gap-2 mt-6">
+          <input
+            id="search"
+            type="text"
+            class="border px-2 py-1 h-8 flex-1 rounded-md dark:text-gray-400"
+          />
+          <select
+            name=""
+            id="types"
+            class="border px-2 py-1 text-sm rounded-md dark:text-gray-400"
+          >
+            <option value="movie">영화</option>
+            <option value="series">시리즈</option>
+          </select>
+          <select
+            name=""
+            id="years"
+            class="border px-2 py-1 text-sm rounded-md dark:text-gray-400"
+          >
+            <option value="">개봉연도</option>
+          </select>
+          <button
+            type="button"
+            id="search-btn"
+            class="border px-2 py-1 text-sm rounded-md bg-white dark:text-gray-400"
+          >
+            검색
+          </button>
+        </form>
+        <div class="relative mt-4">
+          <ul
+            id="search-result-wrap"
+            class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+          ></ul>
           <div
             id="loader"
             role="status"
@@ -65,14 +63,9 @@ const home = (likedMovies) => {
               />
             </svg>
           </div>
-          <ul
-            id="search-result-wrap"
-            class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
-          ></ul>
         </div>
       </div>
-    </div>
- </section>
+    </section>
   `;
 
   document.querySelector("main").innerHTML = sectionMarkup;
