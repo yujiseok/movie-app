@@ -8,12 +8,12 @@ const fetchMovieDetail = async (id) => {
     const res = await fetch(
       `https://omdbapi.com/?apikey=7035c60c&i=${id}&plot=full`
     );
-    loaderHandler(false);
 
     return res.json();
   } catch (error) {
     console.log(error.message);
   }
+  loaderHandler(false);
 };
 
 const renderMovieLists = (movies) => {
@@ -88,8 +88,8 @@ const fetchMovies = async (title, type, year = "", page) => {
     );
     const json = await res.json();
     const { Search: movies, totalResults } = json;
-    loaderHandler(false);
     renderMovieLists(movies);
+    loaderHandler(false);
 
     return movies;
   } catch (error) {

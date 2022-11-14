@@ -1,5 +1,5 @@
 import { darkModeHandler } from "../lib/ui";
-// sm:px-8 md:px-6 lg:px-4 xl:px-2
+// <div><a href="#" class="profile" route="/profile">만든사람</a></div>
 const header = () => {
   const headerMarkup = ` <header class="border-b shadow-md">
     <div class="max-w-1280 mx-auto ">
@@ -11,7 +11,7 @@ const header = () => {
         </ul>
 
         <div class="flex gap-4">
-          <div><a href="#" class="profile" route="/profile">만든사람</a></div>
+          
           <div>
             <input type="checkbox" class="dark-mode-btn" id="dark-mode-btn" />
             <label for="dark-mode-btn" class="dark-mode-label">

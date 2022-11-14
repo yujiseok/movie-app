@@ -17,7 +17,7 @@ header();
 main();
 handleClickHome();
 handleClickLike();
-handleClickProfile();
+// handleClickProfile();
 // Footer();
 
 const router = () => {
@@ -91,14 +91,14 @@ function handleClickLike() {
   });
 }
 
-function handleClickProfile() {
-  const profile = document.querySelector(".profile");
+// function handleClickProfile() {
+//   const profile = document.querySelector(".profile");
 
-  profile.addEventListener("click", (e) => {
-    e.preventDefault();
-    const pagePath = e.currentTarget.getAttribute("route");
-    navigate(pagePath);
-  });
-}
+//   profile.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     const pagePath = e.currentTarget.getAttribute("route");
+//     navigate(pagePath);
+//   });
+// }
 
 export { router, navigate };

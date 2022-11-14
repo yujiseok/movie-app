@@ -5,35 +5,57 @@
 - [x] 영화 제목으로 검색 가능하고 검색된 결과의 영화 목록이 출력돼야 합니다.
 - [x] jQuery, React, Vue 등 JS 라이브러리와 프레임워크는 사용하지 않아야 합니다.
 - [x] 스타일(CSS) 라이브러리나 프레임워크 사용은 자유입니다.
-- [ ] 실제 서비스로 배포하고 접근 가능한 링크를 추가해야 합니다.
+- [x] 실제 서비스로 배포하고 접근 가능한 링크를 추가해야 합니다.
 
 ### ❔ 선택
 
 - [ ] 한 번의 검색으로 영화 목록이 20개 이상 검색되도록 만들어보세요.
-- [x] 영화 개봉연도로 검색할 수 있도록 만들어보세요. ✔
+- [x] 영화 개봉연도로 검색할 수 있도록 만들어보세요.
 - [x] 영화 목록을 검색하는 동안 로딩 애니메이션이 보이도록 만들어보세요.
 - [ ] 무한 스크롤 기능을 추가해서 추가 영화 목록을 볼 수 있도록 만들어보세요.
-- [x] 영화 포스터가 없을 경우 대체 이미지를 출력하도록 만들어보세요. ✔
-- [x] 단일 영화의 상세정보(제목, 개봉연도, 평점, 장르, 감독, 배우, 줄거리, 포스터 등)를 볼 수 있도록 만들어보세요. ✔
+- [x] 영화 포스터가 없을 경우 대체 이미지를 출력하도록 만들어보세요.
+- [x] 단일 영화의 상세정보(제목, 개봉연도, 평점, 장르, 감독, 배우, 줄거리, 포스터 등)를 볼 수 있도록 만들어보세요.
 - [ ] 영화 상세정보가 출력되기 전에 로딩 애니메이션이 보이도록 만들어보세요.
 - [ ] 영화 상세정보 포스터를 고해상도로 출력해보세요.(실시간 이미지 리사이징)
 - [x] 차별화가 가능하도록 프로젝트를 최대한 예쁘게 만들어보세요.
 - [x] 영화와 관련된 기타 기능도 고려해보세요.
 
-# Task
+# 영화 검색 앱
 
-- [ ] 무한스크롤
-- [ ] 좋아요
-- [ ] 라우팅
-- [ ] 디자인 시스템
-- [ ] 반응형
+---
 
-# 기능 문제
+## 🌏 실제 사이트 & 배포 사이트
+
+<h3><a href="https://beautiful-macaron-5341e5.netlify.app/">https://beautiful-macaron-5341e5.netlify.app/</a></h3>
+
+<br/>
+
+## 🔧 기술 스택
+
+<div>
+  
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+<img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+<img src="https://img.shields.io/badge/webpack-%238DD6F9.svg?style=for-the-badge&logo=webpack&logoColor=black">
+<img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white">
+  
+</div>
+
+<br/>
+
+## 💭 생각해볼 점 & 느낀 점
+
+1.
+
+<br/>
+
+## 💭 어려웠던 점
 
 ## 1. Home 컴포넌트가 계속 렌더링 되는 오류
 
 - Home으로 라우팅을 처리할 때 계속 main에 appendChild를 함 그 결과 Home 컴포넌트가 계속 렌더링됨
-- section 태그를 만들지 않고 템플릿으로 만든다 그 후 main에 innerHTML을 사용해 렌더링
+- 해결책 : section 태그를 만들지 않고 템플릿으로 만듦, 그 후 main에 innerHTML을 사용해 렌더링
 
 <br>
 
@@ -45,7 +67,7 @@
 - 그 결과 로컬스토리지 movies의 value들 역시 새 값으로 초기화 됨
 
 - -> 어떻게 해결할 것인지?
-- 해결책 : `let movies = JSON.parse(localStorage.getItem("movies")) || [];` 배열을 항상 초기화 하는 것이 아니라 로컬스토리지에 저장된 아이템이 있다면 그걸 가져옴 없을시 초기화
+- 해결책 : `let movies = JSON.parse(localStorage.getItem("movies")) || [];` 을 이용, 배열을 항상 초기화 하는 것이 아니라 로컬스토리지에 저장된 아이템이 있다면 그걸 가져옴 없을시 초기화
 
 ### 2. 좋아요 취소시 리렌더링
 
@@ -94,19 +116,3 @@
 - 이해필요
 
 <br>
-
-# 스타일링 관련
-
-## 1. 디자인 시스템
-
-- color
-- space
-- border
-- width & height
-- font size & weight
-
-<br>
-
-## 2. 반응형
-
-- 모바일 메뉴를 만들 것 인지
