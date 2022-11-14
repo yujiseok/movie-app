@@ -74,7 +74,7 @@ const renderMovieLists = (movies) => {
 
 const fetchMovies = async (title, type, year = "", page) => {
   const API = {
-    KEY: process.env.API_KEY,
+    KEY: "7035c60c",
     S: `&s=${title}`,
     Y: `&y=${year}`,
     P: `&page=${page}`,
