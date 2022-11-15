@@ -28,7 +28,7 @@ const detail = async (id) => {
           <div class="flex-1 flex flex-col gap-4">
             <div class="shadow-lg p-4 rounded-md flex justify-between dark:bg-gray-800 dark:border-gray-700">
              <div>
-                <h2 class="text-xl font-semibold ">${res.Title}</h2>
+                <h2 class="text-xl font-bold ">${res.Title}</h2>
                 <p class="text-sm text-gray-500">
                   <span class="year">${res.Year}</span> • ${res.Genre.split(
     ", "

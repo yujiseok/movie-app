@@ -45,7 +45,7 @@ const home = () => {
             </button>
          </div>
         </form>
-        <div class="relative mt-4 px-8 sm:px-4">
+        <div class="relative mt-4 px-8 sm:px-0">
           <ul
             id="search-result-wrap"
             class="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
