@@ -47,10 +47,11 @@ const getYear = () => {
   );
 };
 
-const getPage = () => {
+const getPage = (total) => {
   const pagesEl = document.getElementById("pages");
+  pagesEl.innerHTML = `<option value="">페이지</option>`;
   const pages = [];
-  for (let i = 1; i <= 5; i += 1) {
+  for (let i = 1; i <= total; i += 1) {
     pages.push(i);
   }
 

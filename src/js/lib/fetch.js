@@ -1,6 +1,6 @@
 import { likeBtnHandler } from "../lib/likeBtnHandler";
-import { loaderHandler } from "../lib/ui";
-import nothing from "../../img/image_not_found.png";
+import { getPage, loaderHandler } from "../lib/ui";
+import notFound from "../../img/image_not_found.png";
 
 const fetchMovieDetail = async (id) => {
   loaderHandler(true);
@@ -16,10 +16,10 @@ const fetchMovieDetail = async (id) => {
   loaderHandler(false);
 };
 
-const renderMovieLists = (movies) => {
+const renderMovieLists = (movies, totalResults) => {
   const searchResultWrap = document.getElementById("search-result-wrap");
-  searchResultWrap.innerHTML = ``;
 
+  searchResultWrap.innerHTML = ``;
   movies.forEach((movie) => {
     const { imdbID, Poster, Title, Type, Year } = movie;
 
@@ -34,8 +34,9 @@ const renderMovieLists = (movies) => {
       >
         <img
           class="rounded-t-md w-full h-80 movie-poster"
-          src="${Poster !== "N/A" ? Poster : nothing}"
+          src="${Poster !== "N/A" ? Poster : notFound}"
           alt="${Title}"
+          
         />
       </a>
 
@@ -70,6 +71,9 @@ const renderMovieLists = (movies) => {
     </li> `;
     likeBtnHandler();
   });
+
+  const total = Math.ceil(Number(totalResults) / 10);
+  getPage(total);
 };
 
 const fetchMovies = async (title, type, year = "", page) => {
@@ -88,7 +92,8 @@ const fetchMovies = async (title, type, year = "", page) => {
     );
     const json = await res.json();
     const { Search: movies, totalResults } = json;
-    renderMovieLists(movies);
+    document.getElementById("search-result-wrap").innerHTML = ``;
+    renderMovieLists(movies, totalResults);
     loaderHandler(false);
 
     return movies;
@@ -100,13 +105,11 @@ const fetchMovies = async (title, type, year = "", page) => {
 const searchHandler = (e) => {
   e.preventDefault();
   const title = document.getElementById("search").value;
-  const types = document.getElementById("types").value;
-  const years = document.getElementById("years").value;
-  const pages = document.getElementById("pages").value;
+  const type = document.getElementById("types").value;
+  const year = document.getElementById("years").value;
+  const page = document.getElementById("pages").value;
 
-  title
-    ? fetchMovies(title, types, years, pages)
-    : alert("검색어를 입력하세요");
+  title ? fetchMovies(title, type, year, page) : alert("검색어를 입력하세요");
 };
 
 export { fetchMovieDetail, renderMovieLists, fetchMovies, searchHandler };

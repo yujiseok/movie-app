@@ -5,7 +5,7 @@ const like = () => {
   const localLikedMovies = localStorage.getItem("movies");
   const parse = JSON.parse(localLikedMovies);
   document.querySelector("main").innerHTML = ` <section>
-    <div class="max-w-1280 mx-auto">
+    <div class="max-w-1280 mx-auto px-8 sm:px-4">
       <h2 class="my-8 text-xl font-semibold">좋아요한 영화 목록</h2>
       <ul
         class="likes-wrap grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"

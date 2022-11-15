@@ -1,5 +1,6 @@
 import { fetchMovieDetail } from "../lib/fetch";
 import { detailLikeBtnHandler } from "../lib/likeBtnHandler";
+import notFound from "../../img/image_not_found_detail.png";
 
 const detail = async (id) => {
   const section = document.querySelector("section");
@@ -16,11 +17,11 @@ const detail = async (id) => {
 
   const detailMarkup = `<div id="detail-wrap" class="max-w-1024 mx-auto pt-24 flex flex-col">
   
-  <div class="flex gap-4">
+  <div class="flex gap-4 flex-wrap items-center justify-center">
     <div class="shadow-lg">
             <img
-              class="poster rounded-md h-full"
-              src="${res.Poster}"
+              class="poster rounded-md h-full object-cover"
+              src="${res.Poster === "N/A" ? notFound : res.Poster}"
               alt="${res.Title}"
             />
           </div>

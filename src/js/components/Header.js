@@ -2,7 +2,7 @@ import { darkModeHandler } from "../lib/ui";
 // <div><a href="#" class="profile" route="/profile">만든사람</a></div>
 const header = () => {
   const headerMarkup = ` <header class="border-b shadow-md">
-    <div class="max-w-1280 mx-auto ">
+    <div class="max-w-1280 mx-auto  px-8 sm:px-4 ">
       <nav class="flex justify-between items-center h-14 ">
         <ul class="flex gap-4">
           <li><a href="/" class="home" route="/">Home</a></li>
