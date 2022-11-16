@@ -1,7 +1,7 @@
 import { searchHandler } from "../lib/fetch";
 import { getYear, randomPlaceHolder } from "../lib/ui";
 const home = () => {
-  const sectionMarkup = `
+  const homeMarkup = `
     <section class="home-section px-8 sm:px-4">
       <div class="max-w-1280 mx-auto pt-24 ">
         <div>
@@ -78,11 +78,10 @@ const home = () => {
     </section>
   `;
 
-  document.querySelector("main").innerHTML = sectionMarkup;
+  document.querySelector("main").innerHTML = homeMarkup;
 
   randomPlaceHolder();
   getYear();
-  // getPage();
 
   const searchBtn = document.getElementById("search-btn");
   const formEl = document.getElementById("form");
