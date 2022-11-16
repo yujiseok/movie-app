@@ -45,7 +45,7 @@ module.exports = () => {
       historyApiFallback: true,
       watchFiles: ["src/**/*"],
       static: "./public",
-      port: process.env.PORT,
+      port: process.env.PORT || 5000,
       hot: true,
     },
     resolve: {
