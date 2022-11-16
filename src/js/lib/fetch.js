@@ -92,7 +92,6 @@ const fetchMovies = async (title, type, year = "", page) => {
     );
     const json = await res.json();
     const { Search: movies, totalResults } = json;
-    document.getElementById("search-result-wrap").innerHTML = ``;
     renderMovieLists(movies, totalResults);
     loaderHandler(false);
 
